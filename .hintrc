@@ -3,10 +3,10 @@
     "development"
   ],
   "hints": {
-    "axe/forms": [
+    "axe/structure": [
       "default",
       {
-        "label": "off"
+        "listitem": "off"
       }
     ]
   }
