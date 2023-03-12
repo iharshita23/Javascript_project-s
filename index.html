@@ -8,71 +8,87 @@
     <title>Document</title>
     <style>
         body {
-            padding: 50px 100px;
+            margin: 0px;
+            padding: 20px 100px;
         }
         
         h1 {
             text-align: center;
+            text-decoration: underline;
         }
         
-        #container {
-            text-align: center;
-            background-color: aquamarine;
-            padding: 50px;
+        img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
         }
         
-        .input-div {
+        p {
+            font-size: 18px;
+            text-align: justify;
+        }
+        
+        .btn {
+            width: 20px;
+            height: 20px;
             display: inline-block;
+            border: solid black;
+            border-radius: 50%;
+            cursor: pointer;
         }
         
-        .inp {
-            padding: 5px 10px;
-            margin: 10px;
-            font-size: 30px;
-            font-weight: bold;
-            width: 250px;
-            text-align: center;
+        #white {
+            background-color: white;
         }
         
-        label {
-            font-size: 22px;
+        #aqua {
+            background-color: aquamarine;
+        }
+        
+        #black {
+            background-color: black;
+        }
+        
+        #red {
+            background-color: red;
+        }
+        
+        #color-switcher {
+            text-align: right;
         }
     </style>
 </head>
 
 <body>
-    <h1>Temperature Converter</h1>
-    <div id="container">
-        <div class="input-div">
-            <label>Celsius</label><br>
-            <input type="number" value="0" id="cel" class="inp">
-        </div>
-        <div class="input-div">
-            <label>Fahrenheit</label><br>
-            <input type="number" value="32" id="fah" class="inp">
-        </div>
+    <div id="color-swither">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('#7FFFD4')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+        <span class="btn" id="red" onclick="changeBG('#FF0000')"></span>
     </div>
+    <h1 class="text">My Love</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROvgADS_G13-KIu3CQIZiZE_TL3HJNMHFR3w&usqp=CAU" alt="">
+    <p class="text">Hey amazing, wonderful, cutest and the most lovable human being!!! I'm writing this to you because there's a lot inside me that I want you to know, when I say I LOVE YOU I mean that (I care for you,enjoy spending time with you, miss you,love to hug
+        you and love to talk with you, I love holding hand's with you) And much more that I want to express.. But time actually doesn't give me the leisure, I'm sure we will soon be doing this together but till then I want you to grow stronger and stronger.
+        When I say this to you my heart sinks due to the thought of making you sad and sacrificing our togetherness. But my love I'm bound Bcoz of somecommitments that I have done to myself and this nation I always want you to win, and to be with me,
+        Yes this is true that I have dedicated my life more towards my goals but to be honest I want genuinely you to be a part of them, I'm a canvas with few colors and you are my painter who is here to paint me in the most beautiful way.Icareforyou
+        aniket and will always be doing that. Body is nothing without heart and so do I without you ♥️
+    </p>
+
     <script>
-        var cel = document.getElementById("cel");
-        var fah = document.getElementById("fah");
-
-        cel.addEventListener('input', function() {
-            let c = this.value;
-            let f = (c * 9 / 5) + 32;
-            if (!Number.isInteger(f)) {
-                f = f.toFixed(4);
+        function changeBG(color) {
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName("text");
+            if (color == "#000000") {
+                for (let elm of txt) {
+                    elm.style.color = "white";
+                }
+            } else {
+                for (let elm of txt) {
+                    elm.style.color = "black";
+                }
             }
-            fah.value = f;
-        });
-
-        fah.addEventListener('input', function() {
-            let f = this.value;
-            let c = (f - 32) * 5 / 9;
-            if (!Number.isInteger(c)) {
-                c = c.toFixed(4);
-            }
-            cel.value = c;
-        });
+        }
     </script>
 </body>
 
